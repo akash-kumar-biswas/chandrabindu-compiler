@@ -6,8 +6,8 @@ parser.tab.c
 parser.tab.h
 
 # Compiled binary
-compiler
-compiler.exe
+chandrabindu
+chandrabindu.exe
 
 # Runtime-generated output files
 output.txt

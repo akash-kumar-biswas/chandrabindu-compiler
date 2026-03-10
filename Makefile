@@ -2,7 +2,7 @@ CC      = gcc
 CFLAGS  = -Wall -Wno-unused-function -g
 LIBS    = -lm
 
-TARGET  = compiler
+TARGET  = chandrabindu
 
 SRC     = lex.yy.c parser.tab.c main.c
 
