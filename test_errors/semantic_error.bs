@@ -1,0 +1,9 @@
+## Semantic Error Test
+## This program uses an undeclared variable – should produce a Semantic Error
+
+kaj mukkho() -> purno {
+    x: purno = 5;
+    ## 'y' was never declared
+    dekhaoLine(y);
+    ferao 0;
+}

@@ -1,0 +1,144 @@
+## BanglaScript sample program
+
+## User-defined function: addition
+kaj jog(a: purno, b: purno) -> purno {
+    ferao a + b;
+}
+
+## User-defined function: factorial (recursive)
+kaj factorial(n: purno) -> purno {
+    jodi (n <= 1) {
+        ferao 1;
+    }
+    ferao n * factorial(n - 1);
+}
+
+## Main entry point
+kaj mukkho() -> purno {
+
+    ## Basic variables
+    a, b: purno = 67, 7;
+    name: okkhorMala = "akash";
+    nums: talika<purno> = [3, 5, 6];
+    names: talika<okkhorMala> = ["akash", "rahim"];
+
+    ## Function call
+    total: purno = jog(a, b);
+    dekhaoLine("Sum = ", total);
+
+    ## String mutation
+    name[0] = 'A';
+    dekhaoLine("Name = ", name);
+
+    ## Array size and access
+    dekhaoLine("Nums size = ", nums.size());
+    dekhaoLine("First num = ", nums[0]);
+
+    ## Array of strings
+    dekhaoLine("First name = ", names[0]);
+    dekhaoLine("Char from name = ", names[0][2]);
+
+    ## Math functions
+    result: doshomik = borgomul(25.0);
+    dekhaoLine("sqrt(25) = ", result);
+    dekhaoLine("porom(-10) = ", porom(-10));
+
+    ## Power operator
+    pw: doshomik = 2 ^^ 8;
+    dekhaoLine("2^^8 = ", pw);
+
+    ## Conditional
+    jodi (total > 10) {
+        dekhaoLine("Total is large");
+    } nahole {
+        dekhaoLine("Total is small");
+    }
+
+    ## For loop
+    i: purno = 0;
+    ghurao(i = 0; i < 5; i++) {
+        dekhao(i, " ");
+    }
+    dekhaoLine("");
+
+    ## While loop
+    x: purno = 10;
+    jotokkhon (x > 7) {
+        x--;
+    }
+    dekhaoLine("x after while = ", x);
+
+    ## Switch statement
+    day: purno = 2;
+    nirbachon (day) {
+        dhoro 1:
+            dekhaoLine("Monday");
+            thamo;
+        dhoro 2:
+            dekhaoLine("Tuesday");
+            thamo;
+        onnotha:
+            dekhaoLine("Other day");
+    }
+
+    ## Recursive factorial
+    dekhaoLine("5! = ", factorial(5));
+
+    ## Boolean example
+    flag: shottiMiththa = shotti;
+    jodi (flag) {
+        dekhaoLine("Flag is true");
+    }
+
+    ## Implicit type conversion
+    pi: doshomik = 3 + 0.14;
+    dekhaoLine("pi approx = ", pi);
+
+    ghurao(i: purno = 0 ;i<5; i++){
+        dekhao("shera = ", i);
+    }
+
+    arr: talika<doshomik> = [1, 2 ,3];
+   ## nao(arr);
+    
+    ghurao(j: purno = 0; j < arr.size(); j++){
+        dekhaoLine("value j = ", arr[j]);
+    }
+    #*
+    str: okkhorMala; 
+    nao(str);
+
+    p, q: purno = 0, str.size()-1;
+
+    fla: shottiMiththa = shotti;
+    jotokkhon (p < q){
+        jodi (str[p] != str[q]){
+            fla = miththa;
+            thamo;
+        }
+        p++;
+        q--;
+    }
+
+    jodi(fla){
+        dekhaoLine("Y");
+    }
+    nahole{
+        dekhaoLine("No");
+    }*#
+
+    juba: talika<purno>;
+
+    nao(juba);
+
+    
+    ghurao(i: purno = 1; i < juba.size(); i++){
+        juba[i] = juba[i] + juba[i - 1];
+    }
+
+    ghurao(i: purno = 0; i < juba.size(); i++){
+        dekhaoLine(juba[i]);
+    }
+
+    ferao 0;
+}

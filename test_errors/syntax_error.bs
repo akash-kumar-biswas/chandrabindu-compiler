@@ -1,0 +1,9 @@
+## Syntax Error Test
+## This program has a missing closing brace – should produce a Syntax Error
+
+kaj mukkho() -> purno {
+    x: purno = 10;
+    jodi (x > 5) {
+        dekhaoLine("hello");
+    ## missing closing brace for mukkho
+    ferao 0;

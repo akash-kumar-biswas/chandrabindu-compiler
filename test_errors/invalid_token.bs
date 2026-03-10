@@ -1,0 +1,8 @@
+## Invalid Token Test
+## This program contains '@' which is not a valid BanglaScript token
+
+kaj mukkho() -> purno {
+    x: purno = 5;
+    @ invalid_token_here
+    ferao 0;
+}
