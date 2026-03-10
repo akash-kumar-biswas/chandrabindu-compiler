@@ -31,7 +31,7 @@ A statically typed, interpreted programming language with **Bangla (Romanized Be
 
 ## Overview
 
-Chandrabindu programs are written in `.bs` source files. The compiler reads a source file, tokenizes it, parses it into an AST, validates semantics, generates TAC-like intermediate code, and executes the program by walking the AST.
+Chandrabindu programs are written in `.cb` source files. The compiler reads a source file, tokenizes it, parses it into an AST, validates semantics, generates TAC-like intermediate code, and executes the program by walking the AST.
 
 - Output is written to both the **terminal** and `output.txt` simultaneously
 - Intermediate representation is written to `intermediate.txt` after every successful parse
@@ -106,13 +106,13 @@ make clean    # Remove all generated files
 ## Usage
 
 ```bash
-./chandrabindu <source_file.bs>
+./chandrabindu <source_file.cb>
 ```
 
 **Example:**
 
 ```bash
-./chandrabindu input.bs
+./chandrabindu input.cb
 ```
 
 After running:
@@ -123,7 +123,7 @@ After running:
 **Makefile shortcuts:**
 
 ```bash
-make run      # Build and run input.bs
+make run      # Build and run input.cb
 make clean    # Remove generated files
 ```
 
@@ -481,14 +481,14 @@ chandrabindu-compiler/
 ├── main.c               # Entry point — orchestrates the full compiler pipeline
 ├── Makefile             # Build automation
 │
-├── input.bs             # Sample Chandrabindu program
+├── input.cb             # Sample Chandrabindu program
 ├── output.txt           # Program output (generated at runtime)
 ├── intermediate.txt     # TAC-like intermediate code (generated at runtime)
 │
 └── test_errors/
-    ├── invalid_token.bs  # Lexical error test
-    ├── syntax_error.bs   # Syntax error test
-    └── semantic_error.bs # Semantic error test
+    ├── invalid_token.cb  # Lexical error test
+    ├── syntax_error.cb   # Syntax error test
+    └── semantic_error.cb # Semantic error test
 ```
 
 > `lex.yy.c`, `parser.tab.c`, `parser.tab.h`, and `chandrabindu`/`chandrabindu.exe` are generated at build time and not committed to the repository.
@@ -498,7 +498,7 @@ chandrabindu-compiler/
 ## Compiler Pipeline
 
 ```
-input.bs
+input.cb
     │
     ▼
 ┌────────────────────────────────┐

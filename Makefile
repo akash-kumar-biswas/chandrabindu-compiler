@@ -22,20 +22,17 @@ $(TARGET): $(SRC)
 
 # Run with default input
 run: $(TARGET)
-	./$(TARGET) input.bs
+	./$(TARGET) input.cb
 
-# Run test files
-test-valid: $(TARGET)
-	./$(TARGET) tests/valid/test1.bs
-
+# Run test_errors files
 test-syntax: $(TARGET)
-	./$(TARGET) tests/syntax_error.bs
+	./$(TARGET) test_errors/syntax_error.cb
 
 test-semantic: $(TARGET)
-	./$(TARGET) tests/semantic_error.bs
+	./$(TARGET) test_errors/semantic_error.cb
 
 test-invalid-token: $(TARGET)
-	./$(TARGET) tests/invalid_token.bs
+	./$(TARGET) test_errors/invalid_token.cb
 
 clean:
 	rm -f lex.yy.c parser.tab.c parser.tab.h $(TARGET) output.txt
