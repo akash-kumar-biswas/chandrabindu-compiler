@@ -31,7 +31,7 @@ kaj mukkho() -> purno {
     dekhaoLine("Name = ", name);
 
     ## Array size and access
-    dekhaoLine("Nums size = ", nums.size());
+    dekhaoLine("Nums size = ", nums.dairgho());
     dekhaoLine("First num = ", nums[0]);
 
     ## Array of strings
@@ -101,14 +101,14 @@ kaj mukkho() -> purno {
     arr: talika<doshomik> = [1, 2 ,3];
    ## nao(arr);
     
-    ghurao(j: purno = 0; j < arr.size(); j++){
+    ghurao(j: purno = 0; j < arr.dairgho(); j++){
         dekhaoLine("value j = ", arr[j]);
     }
     #*
     str: okkhorMala; 
     nao(str);
 
-    p, q: purno = 0, str.size()-1;
+    p, q: purno = 0, str.dairgho()-1;
 
     fla: shottiMiththa = shotti;
     jotokkhon (p < q){
@@ -132,11 +132,11 @@ kaj mukkho() -> purno {
     nao(juba);
 
     
-    ghurao(i: purno = 1; i < juba.size(); i++){
+    ghurao(i: purno = 1; i < juba.dairgho(); i++){
         juba[i] = juba[i] + juba[i - 1];
     }
 
-    ghurao(i: purno = 0; i < juba.size(); i++){
+    ghurao(i: purno = 0; i < juba.dairgho(); i++){
         dekhaoLine(juba[i]);
     }
 

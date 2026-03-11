@@ -101,7 +101,7 @@ static char *process_string(const char *s, int len) {
 "dekhao"                { return DEKHAO; }
 "dekhaoLine"            { return DEKHAOLINE; }
 "nao"                   { return NAO; }
-"size"                  { return SIZE; }
+"dairgho"               { return DAIRGHO; }
 
 "sin"                   { return SIN; }
 "cos"                   { return COS; }

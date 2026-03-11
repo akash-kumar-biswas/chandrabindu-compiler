@@ -202,7 +202,7 @@ typedef enum {
     N_BOOL_LIT,
     N_IDENT,
     N_ARRAY_ACCESS,
-    N_DOT_SIZE,
+    N_DOT_DAIRGHO,
     N_FUNC_CALL,
     N_ARRAY_LIT
 } NodeType;
@@ -569,11 +569,11 @@ static Value exec_expr(ASTNode *n) {
         }
     }
 
-    case N_DOT_SIZE: {
+    case N_DOT_DAIRGHO: {
         Value base = exec_expr(n->c0);
         if (base.type == T_ARRAY)  return make_int_val(base.arr_size);
         if (base.type == T_STRING) return make_int_val(base.sval ? (int)strlen(base.sval) : 0);
-        fprintf(stderr,"Type Error: .size() not applicable at line %d\n",n->line); exit(1);
+        fprintf(stderr,"Type Error: .dairgho() not applicable at line %d\n",n->line); exit(1);
     }
 
     case N_FUNC_CALL: {
@@ -1172,10 +1172,10 @@ static char *ir_emit_expr(ASTNode *n, FILE *out) {
             fprintf(out, "%s = %s[%s]\n", tmp, base, idx);
             return tmp;
         }
-        case N_DOT_SIZE: {
+        case N_DOT_DAIRGHO: {
             char *base = ir_emit_expr(n->c0, out);
             char *tmp = ir_new_temp();
-            fprintf(out, "%s = size(%s)\n", tmp, base);
+            fprintf(out, "%s = dairgho(%s)\n", tmp, base);
             return tmp;
         }
         case N_FUNC_CALL: {
@@ -1457,7 +1457,7 @@ typedef struct ASTNode ASTNode;
 %token JODI NAHOLEJODI NAHOLE
 %token GHURAO JOTOKKHON CHOLTETHAKO THAMO
 %token NIRBACHON DHORO ONNOTHA
-%token DEKHAO DEKHAOLINE NAO SIZE
+%token DEKHAO DEKHAOLINE NAO DAIRGHO
 %token SIN COS TAN LOG LOG10 UPOREPURNO NICHEPURNO BORGOMUL POROM
 %token TYPE_PURNO TYPE_DOSHOMIK TYPE_OKKHOR TYPE_BOOL TYPE_KHALI
 %token TYPE_OKKHORMALA TYPE_TALIKA
@@ -1834,9 +1834,9 @@ expr
     | expr LBRACKET expr RBRACKET
         { ASTNode *n=new_node(N_ARRAY_ACCESS); n->c0=$1; n->c1=$3; $$=n; }
 
-    /* .size() */
-    | expr DOT SIZE LPAREN RPAREN
-        { ASTNode *n=new_node(N_DOT_SIZE); n->c0=$1; $$=n; }
+    /* .dairgho() */
+    | expr DOT DAIRGHO LPAREN RPAREN
+        { ASTNode *n=new_node(N_DOT_DAIRGHO); n->c0=$1; $$=n; }
 
     /* Parenthesised */
     | LPAREN expr RPAREN { $$ = $2; }

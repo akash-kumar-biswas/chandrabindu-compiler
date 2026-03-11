@@ -45,7 +45,7 @@ Chandrabindu programs are written in `.cb` source files. The compiler reads a so
 - **Static typing** — 7 data types with implicit numeric promotion
 - **Block scoping** — C-style lexical scope; variable shadowing supported
 - **User-defined functions** — typed parameters, typed return values, full recursion support
-- **1D homogeneous arrays** — `talika<T>`, with runtime bounds checking and `.size()`
+- **1D homogeneous arrays** — `talika<T>`, with runtime bounds checking and `.dairgho()`
 - **Mutable strings** — character-level indexing and mutation; array of strings with double-indexing
 - **Built-in math** — `sin`, `cos`, `tan`, `log`, `log10`, `borgomul`, `uporePurno`, `nichePurno`, `porom`
 - **Power operator** — `x ^^ y` evaluates `x` to the power `y`
@@ -301,7 +301,7 @@ cholteThako;  ## skip to next iteration
 ## Arrays
 nums: talika<purno> = [1, 2, 3];
 dekhaoLine(nums[0]);        ## access element
-dekhaoLine(nums.size());    ## 3
+dekhaoLine(nums.dairgho());    ## 3
 nums[1] = 99;               ## mutate element
 
 ## Array of strings
@@ -313,7 +313,7 @@ dekhaoLine(names[0][2]);    ## 'a' (character at index 2)
 name: okkhorMala = "hello";
 name[0] = 'H';              ## mutable character assignment
 dekhaoLine(name);           ## "Hello"
-dekhaoLine(name.size());    ## 5
+dekhaoLine(name.dairgho());    ## 5
 ```
 
 ---
